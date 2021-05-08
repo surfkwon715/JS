@@ -76,7 +76,7 @@ function hide_numbers(s){
     return result;
   }
 
-//하샤드 수
+//하샤드 수(문제 5)
 function solution(x) {
     let result=0;
     let arr = String(x).split("")
