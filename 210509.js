@@ -62,3 +62,22 @@ function solution(arr) {
     if(arr.length<1){return [-1]}
     return arr
 }
+
+//제곱근 판별(문제 11)
+//sqrt와 pow를 조합해서 해결
+function solution(n) {
+    return Math.sqrt(n)%1===0? Math.pow(Math.sqrt(n)+1,2): -1
+}
+
+//정수 내림차순 배치(문제 12)
+//자료형 전환 split join String parseInt 조합해서 해결 
+function solution(n) {
+    let rv = String(n).split("")
+    return parseInt(rv.sort((a,b)=>b-a).map((n)=>parseInt(n)).join(""))
+ }
+
+ //자연수 뒤집어서 배열로 만들기(문제 13)(12와 유사)
+ function solution(n) {
+    let array = String(n).split("").reverse()
+    return array.map((n)=> parseInt(n))  
+}
