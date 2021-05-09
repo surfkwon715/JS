@@ -87,8 +87,10 @@ function solution(x) {
 }
 
 //reduce를 사용한 다른사람 풀이
-// 문자열로 바꾸고 reduce 내에서 다시 숫자로 연산처리 + 0=false 1=true에 !를 사용
+//문자열로 바꾸고 reduce 내에서 다시 숫자로 연산처리 + 0=false 1=true에 !를 사용
 function solution(n){
     return !(n%(n+'').split('').
              reduce(function (prev,curr) {return +prev + +curr;}));
   }
+
+
