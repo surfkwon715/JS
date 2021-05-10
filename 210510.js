@@ -52,3 +52,29 @@ function solution(n) {
 function solution(s) {
     return s[0]==="-"?0-parseInt(s.slice(1)):parseInt(s)
     }
+
+//수박수.. (문제17)
+//홀수면 slice(0,-1)인 삼항연산자를 사용해서 해결
+function solution(n) {
+    let word = ['수','박'];
+    let result =""
+    
+    for(let i=0;i<n/2;++i)
+    {result+=(word[0]+word[1])}
+
+    return n%2==0? result: result.slice(0,-1)     
+}
+
+// //소수찾기(문제18)
+// function solution(n) {
+//     const s = new Array(n).fill(true);                
+//     s[0] = false;                                     
+//     for (let i = 2; i ** 2 <= n; i++) {
+//       if (s[i - 1] === true) {
+//         for (let j = i ** 2; j <= n; j += i) {
+//           s[j - 1] = false;
+//         }
+//       }
+//     }
+//     return s.filter((e) => e).length;
+//   }
