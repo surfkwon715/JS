@@ -14,7 +14,7 @@ function average(array){
 
 //콜라츠 추측(문제 7)
 function solution(num) {
-    let count =0;
+    let count = 0;
     while(num!==1){
        if(count>=500){
            return -1

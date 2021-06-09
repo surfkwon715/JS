@@ -1,14 +1,30 @@
 // 직사각형 별찍기(문제 1)
-// split() Number For문 repeat을 조합해서 해결
 process.stdin.setEncoding('utf8');
 process.stdin.on('data', data => {
-    const n = data.split(" ");
+    const n = data.split(" "); 
+    // 5 3 => ['5','3'] 
+    // split("")하면 ['5',' ','3'] 
+
     const row = Number(n[0]) 
     const column = Number(n[1]);
+    //string값을 number로 변환
     
     for(let i =0; i<column; ++i){
-       console.log("*".repeat(row))
-    }
+       console.log("*".repeat(row))}
+    
+    // for (let i = 0; i < b; i++) {
+    //     for (let j = 0; j < a; j++) {
+    //         result += '*';
+    //     }
+    //     result += '\n'
+    // }
+
+    // for(var i=0; i<b; i++){
+    //     var temp = ''
+    //     for(var j=0; j<a; j++)
+    //         temp += '*'
+   
+    // 이중포문도 두가지 방법으로 사용가능
 });
 
 // For문 사용하지 않은 다른 사람의 풀이
@@ -43,6 +59,19 @@ function solution(x, n) {
 function solution(x, n) {
     return [...Array(n).keys()].map(v => (v + 1) * x);
 }
+//from을 사용해서 같은 방식으로 구성
+function solution(x, n) {
+    return nNumbers(x,n);
+}
+const nNumbers = (x, n)=>{
+    return Array.from({length: n},(v,index)=>(index+1)*x);
+};
+//재귀
+function solution(x, n) {
+    return (n === 1) ? [x] : [ ...solution(x, n - 1), (x * n)];
+}
+
+
 
 //행렬의 덧셈(문제 3)
 //이중배열 선언/접근 For문을 조합해서 해결  
@@ -88,9 +117,11 @@ function solution(x) {
 
 //reduce를 사용한 다른사람 풀이
 //문자열로 바꾸고 reduce 내에서 다시 숫자로 연산처리 + 0=false 1=true에 !를 사용
+//parseInt로 바꾸지 않고 그냥 +붙여서 처리해버린다
 function solution(n){
     return !(n%(n+'').split('').
              reduce(function (prev,curr) {return +prev + +curr;}));
   }
 
+//   reduce는 배열을 주고 하나씩 연산이 될 수 있도록...!
 
