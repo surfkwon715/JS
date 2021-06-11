@@ -3,23 +3,48 @@ import math
 def solution(progresses, speeds):
     answer = []
     temp = []
-
+    
+    #[5,10,1,1,20,1]
     for i in range(len(progresses)):
         temp.append(math.ceil((100-progresses[i])/speeds[i]))
 
     cnt = 0
-    p = temp[0]
-    for i in range(len(temp)):
-        if p < temp[i]:
+    p = temp[0]                     
+    for i in range(len(temp)):      
+        if p < temp[i]:              
             answer.append(cnt)
-            p = temp[i]
-            cnt = 0
-        cnt += 1
-    answer.append(cnt)
+            p = temp[i]   
+            cnt = 0 
+        cnt += 1                          
+    answer.append(cnt)                
 
 
     return answer
 
+import math
+from collections import deque
+
+def solution(progresses, speeds):
+    answer = []
+    temp = []
+    
+    temp =deque(temp)
+    #[5,10,1,1,20,1]
+    for i in range(len(progresses)):
+        temp.append(math.ceil((100-progresses[i])/speeds[i]))
+
+    cnt = 1
+    p = temp.popleft()                   
+    for i in range(len(temp)):      
+        if p < temp[i]:              
+            answer.append(cnt)
+            p = temp[i]   
+            cnt = 0 
+        cnt += 1                          
+    answer.append(cnt)                
+
+
+    return answer
 
 #다시 해보기
 def solution(progresses, speeds):
